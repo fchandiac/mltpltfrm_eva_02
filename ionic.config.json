@@ -1,0 +1,7 @@
+{
+  "name": "mltpltfrm_eva_02",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
