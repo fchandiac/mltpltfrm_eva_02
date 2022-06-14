@@ -1,0 +1,18 @@
+<ion-tabs>
+  <!-- Tab bar -->
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="profile">
+      <ion-icon name="person-circle" size="large" (click)="profile()"></ion-icon>
+      Perfil
+    </ion-tab-button>
+    <ion-tab-button tab="scan">
+      <ion-icon name="scan-circle" size="large" (click)="scan()"></ion-icon>
+      Scan
+    </ion-tab-button>
+    <ion-tab-button tab="history">
+      <ion-icon name="list-circle" size="large" (click)="history()"></ion-icon>
+      Hitorial
+    </ion-tab-button>
+    <ion-route url="/scan" component="app-scan"></ion-route>
+  </ion-tab-bar>
+</ion-tabs>

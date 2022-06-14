@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card class="profile-card">
+    <ion-item>
+      <ion-avatar class="app-avatar">
+        <img src={{photoURL}}>
+      </ion-avatar>
+    </ion-item>
+  
+    <ion-card-content>
+      Bienvenido {{displayName}}
+    </ion-card-content>
+  </ion-card>
+  <ion-label>
+    correo regstrado: {{email}}
+  </ion-label>
+ 
+</ion-content>
+<app-tabbar></app-tabbar>

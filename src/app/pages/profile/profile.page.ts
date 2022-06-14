@@ -1,8 +1,6 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 import { initializeApp } from 'firebase/app'
 import { GoogleAuthProvider, getAuth, onAuthStateChanged, signInWithRedirect } from "firebase/auth"
-import { Router } from '@angular/router';
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyAS2ev4-oS8KUEMLbB_aK1isEBFmkgtKzM",
@@ -17,32 +15,31 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-const provider = new GoogleAuthProvider()
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss'],
 })
-export class HomePage {
+export class ProfilePage implements OnInit {
 
-  constructor(private router: Router) {}
+  public displayName: string
+  public photoURL: string
+  public email: string
+
+  constructor() { }
 
   ngOnInit() {
     const auth = getAuth()
     onAuthStateChanged(auth, (user) => {
       if (user) {
           if (user !== null) {
-            this.router.navigate(['/profile'])
-      
+            this.displayName = user.displayName
+            this.photoURL = user.photoURL
+            this.email = user.email
           }
-      } 
+      }  
   })
-  }
-
-  login(){
-    const auth = getAuth()
-    signInWithRedirect(auth, provider)
   }
 
 }

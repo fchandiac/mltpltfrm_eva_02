@@ -1,7 +1,8 @@
 {
   "name": "mltpltfrm_eva_02",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
